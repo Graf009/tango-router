@@ -1,0 +1,16 @@
+{
+  "name": "tango-router",
+  "version": "1.0.0",
+  "description": "Dead simple router for tango",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/Graf009/tango-router.git"
+  },
+  "author": "Oleg Orlov <mail@orlovoleg.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react-router": "2.0.0",
+    "react-router-redux": "3.0.0"
+  }
+}
