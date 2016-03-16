@@ -1,4 +1,4 @@
-import { routeActions, syncHistory, routeReducer } from 'react-router-redux';
+import { routeActions, syncHistory, routeReducer } from 'react-router-redux'
 import {
   browserHistory,
   Router,
@@ -8,9 +8,9 @@ import {
   IndexRoute,
   IndexLink,
   IndexRedirect
-} from 'react-router';
+} from 'react-router'
 
-const moduleName = 'router';
+const moduleName = 'router'
 
 const builtins = {
   Router,
@@ -20,10 +20,10 @@ const builtins = {
   IndexRoute,
   IndexLink,
   IndexRedirect
-};
+}
 
-const middleware = syncHistory(browserHistory);
-const getRouterState = (state) => state.get(moduleName).location;
+const middleware = syncHistory(browserHistory)
+const getRouterState = (state) => state.get(moduleName).location
 
 export default {
   ...builtins,
@@ -36,7 +36,7 @@ export default {
   },
   middleware,
   hook: (store) => {
-    middleware.listenForReplays(store, getRouterState);
-    return store;
+    middleware.listenForReplays(store, getRouterState)
+    return store
   }
-};
+}
