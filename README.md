@@ -7,7 +7,7 @@ Wraps react-router + react-router-redux and provides the simplest API possible. 
 ## Install
 
 ```
-npm install tango-router --save
+npm install @tvevt/tango-router --save
 ```
 
 ## Get Started
@@ -16,11 +16,11 @@ npm install tango-router --save
 - Add it to your store's plugins
 - Router state is now under `router` in your store
 
-### ES6 Example
+### Example
 
 ```js
-import { createStore } from 'tango'
-import * as router from 'tango-router'
+import { createStore } from '@tvevt/tango'
+import * as router from '@tvevt/tango-router'
 
 // you get the point
 let store = createStore({
@@ -47,3 +47,21 @@ These are all re-exported from react-router, the behavior is exactly the same. S
 - IndexRoute
 - IndexLink
 - IndexRedirect
+
+#### Auth
+
+   handling authentication
+   
+##### Props
+
+- `store` - Redux store
+- `options` - Options Object
+
+##### Options Object Keys
+
+- `authSelector(state): authData` \(*Function*): A state selector for the auth data.
+- `redirectAction` \(*Function*): action for redirecting the user.
+- `[failureRedirectPath]` \(*String*): Optional path to redirect the browser to on a failed check. Defaults to `/login`
+- `[predicate(authData): Bool]` \(*Function*): Optional function to be passed the result of the `authSelector` param.
+If it evaluates to false the browser will be redirected to `failureRedirectPath`.
+- `[allowRedirectBack]` \(*Bool*): Optional bool on whether to pass a `redirect` query parameter to the `failureRedirectPath`

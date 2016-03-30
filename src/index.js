@@ -10,6 +10,8 @@ import {
   IndexRedirect
 } from 'react-router'
 
+import Auth from './lib/Auth'
+
 const moduleName = 'router'
 
 const builtins = {
@@ -19,7 +21,8 @@ const builtins = {
   Redirect,
   IndexRoute,
   IndexLink,
-  IndexRedirect
+  IndexRedirect,
+  Auth
 }
 
 const middleware = syncHistory(browserHistory)
