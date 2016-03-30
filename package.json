@@ -1,6 +1,6 @@
 {
   "name": "@tvevt/tango-router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dead simple router for tango",
   "main": "dist/index.js",
   "repository": {
