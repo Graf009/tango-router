@@ -32,7 +32,7 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _tango = require('@tvevt/tango');
+var _tango = require('@eagle/tango');
 
 var _immutable = require('immutable');
 

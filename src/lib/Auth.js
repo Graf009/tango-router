@@ -1,6 +1,6 @@
 import { createRouteFromReactElement } from 'react-router/lib/RouteUtils'
 import invariant from 'invariant'
-import { Component, PropTypes } from '@tvevt/tango'
+import { Component, PropTypes } from '@eagle/tango'
 
 import createAuthComponent from './createAuthComponent'
 
@@ -27,5 +27,6 @@ export default class Auth extends Component {
       false,
       '<Auth> elements are for router configuration only and should not be rendered'
     )
+    return null
   }
 }

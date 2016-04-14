@@ -1,14 +1,18 @@
-# tango-router
+# @eagle/tango-router
 
-> Dead simple router for tango
+> Dead simple router for @eagle/tango
 
-Wraps react-router + react-router-redux and provides the simplest API possible. Built for tango, but will work in any redux application.
+Wraps react-router + react-router-redux and provides the simplest API possible. Built for @eagle/tango, but will work in any redux application.
 
 ## Install
 
 ```
-npm install @tvevt/tango-router --save
+npm install --save @eagle/tango-router
 ```
+
+## Repository
+
+https://github.com/Graf009/tango-router.git
 
 ## Get Started
 
@@ -19,8 +23,8 @@ npm install @tvevt/tango-router --save
 ### Example
 
 ```js
-import { createStore } from '@tvevt/tango'
-import * as router from '@tvevt/tango-router'
+import { createStore } from '@eagle/tango'
+import * as router from '@eagle/tango-router'
 
 // you get the point
 let store = createStore({

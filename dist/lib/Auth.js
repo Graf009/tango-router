@@ -37,7 +37,7 @@ var _invariant = require('invariant');
 
 var _invariant2 = _interopRequireDefault(_invariant);
 
-var _tango = require('@tvevt/tango');
+var _tango = require('@eagle/tango');
 
 var _createAuthComponent2 = require('./createAuthComponent');
 
@@ -57,6 +57,7 @@ var Auth = (_temp = _class = function (_Component) {
     key: 'render',
     value: function render() {
       (0, _invariant2.default)(false, '<Auth> elements are for router configuration only and should not be rendered');
+      return null;
     }
   }], [{
     key: 'createRouteFromReactElement',

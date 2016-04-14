@@ -1,5 +1,5 @@
 import React from 'react'
-import { Component, PropTypes, connect } from '@tvevt/tango'
+import { Component, PropTypes, connect } from '@eagle/tango'
 import { Iterable } from 'immutable'
 
 const defaults = {
