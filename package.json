@@ -1,6 +1,6 @@
 {
   "name": "@eagle/tango-router",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Dead simple router for @eagle/tango",
   "main": "dist/index.js",
   "repository": {
