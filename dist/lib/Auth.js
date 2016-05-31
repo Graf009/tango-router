@@ -1,25 +1,15 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+exports.__esModule = true;
 exports.default = undefined;
 
 var _extends2 = require('babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
-
-var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-
 var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _createClass2 = require('babel-runtime/helpers/createClass');
-
-var _createClass3 = _interopRequireDefault(_createClass2);
 
 var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
 
@@ -50,34 +40,31 @@ var Auth = (_temp = _class = function (_Component) {
 
   function Auth() {
     (0, _classCallCheck3.default)(this, Auth);
-    return (0, _possibleConstructorReturn3.default)(this, (0, _getPrototypeOf2.default)(Auth).apply(this, arguments));
+    return (0, _possibleConstructorReturn3.default)(this, _Component.apply(this, arguments));
   }
 
-  (0, _createClass3.default)(Auth, [{
-    key: 'render',
-    value: function render() {
-      (0, _invariant2.default)(false, '<Auth> elements are for router configuration only and should not be rendered');
-      return null;
-    }
-  }], [{
-    key: 'createRouteFromReactElement',
-    value: function createRouteFromReactElement(element) {
-      var route = (0, _RouteUtils.createRouteFromReactElement)(element);
-      var options = route.options;
-      var store = route.store;
+  Auth.createRouteFromReactElement = function createRouteFromReactElement(element) {
+    var route = (0, _RouteUtils.createRouteFromReactElement)(element);
+    var options = route.options;
+    var store = route.store;
 
-      var _createAuthComponent = (0, _createAuthComponent3.default)(options);
+    var _createAuthComponent = (0, _createAuthComponent3.default)(options);
 
-      var component = _createAuthComponent.component;
-      var onEnter = _createAuthComponent.onEnter;
+    var component = _createAuthComponent.component;
+    var onEnter = _createAuthComponent.onEnter;
 
 
-      return (0, _extends3.default)({}, route, {
-        component: component,
-        onEnter: onEnter(store)
-      });
-    }
-  }]);
+    return (0, _extends3.default)({}, route, {
+      component: component,
+      onEnter: onEnter(store)
+    });
+  };
+
+  Auth.prototype.render = function render() {
+    (0, _invariant2.default)(false, '<Auth> elements are for router configuration only and should not be rendered');
+    return null;
+  };
+
   return Auth;
 }(_tango.Component), _class.propTypes = {
   options: _tango.PropTypes.object.isRequired,

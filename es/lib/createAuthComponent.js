@@ -1,45 +1,23 @@
-'use strict';
-
-exports.__esModule = true;
-
-var _extends2 = require('babel-runtime/helpers/extends');
-
-var _extends3 = _interopRequireDefault(_extends2);
-
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
-
-var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
-
-var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-
-var _inherits2 = require('babel-runtime/helpers/inherits');
-
-var _inherits3 = _interopRequireDefault(_inherits2);
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _tango = require('@eagle/tango');
-
-var _immutable = require('immutable');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+import _extends from 'babel-runtime/helpers/extends';
+import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
+import _possibleConstructorReturn from 'babel-runtime/helpers/possibleConstructorReturn';
+import _inherits from 'babel-runtime/helpers/inherits';
+import React from 'react';
+import { Component, PropTypes, connect } from '@eagle/tango';
+import { Iterable } from 'immutable';
 
 var defaults = {
   failureRedirectPath: '/login',
   predicate: function predicate(authData) {
-    return _immutable.Iterable.isIterable(authData) && !authData.isEmpty();
+    return Iterable.isIterable(authData) && !authData.isEmpty();
   },
   allowRedirectBack: true
 };
 
-exports.default = function (options) {
+export default (function (options) {
   var _dec, _class, _class2, _temp;
 
-  var _defaults$options = (0, _extends3.default)({}, defaults, options);
+  var _defaults$options = _extends({}, defaults, options);
 
   var authSelector = _defaults$options.authSelector;
   var failureRedirectPath = _defaults$options.failureRedirectPath;
@@ -71,12 +49,13 @@ exports.default = function (options) {
     }
   };
 
-  var AuthComponent = (_dec = (0, _tango.connect)({ authData: authSelector }), _dec(_class = (_temp = _class2 = function (_Component) {
-    (0, _inherits3.default)(AuthComponent, _Component);
+  var AuthComponent = (_dec = connect({ authData: authSelector }), _dec(_class = (_temp = _class2 = function (_Component) {
+    _inherits(AuthComponent, _Component);
 
     function AuthComponent() {
-      (0, _classCallCheck3.default)(this, AuthComponent);
-      return (0, _possibleConstructorReturn3.default)(this, _Component.apply(this, arguments));
+      _classCallCheck(this, AuthComponent);
+
+      return _possibleConstructorReturn(this, _Component.apply(this, arguments));
     }
 
     AuthComponent.prototype.componentWillMount = function componentWillMount() {
@@ -94,20 +73,20 @@ exports.default = function (options) {
 
 
       if (isAuthorized(authData)) {
-        return _react2.default.Children.only(children);
+        return React.Children.only(children);
       }
       // Don't need to display anything because the user will be redirected
       return null;
     };
 
     return AuthComponent;
-  }(_tango.Component), _class2.propTypes = {
-    location: _tango.PropTypes.shape({
-      pathname: _tango.PropTypes.string.isRequired,
-      search: _tango.PropTypes.string.isRequired
+  }(Component), _class2.propTypes = {
+    location: PropTypes.shape({
+      pathname: PropTypes.string.isRequired,
+      search: PropTypes.string.isRequired
     }).isRequired,
-    authData: _tango.PropTypes.object,
-    children: _tango.PropTypes.node
+    authData: PropTypes.object,
+    children: PropTypes.node
   }, _temp)) || _class);
 
 
@@ -122,6 +101,4 @@ exports.default = function (options) {
     component: AuthComponent,
     onEnter: onEnter
   };
-};
-
-module.exports = exports['default'];
+})
