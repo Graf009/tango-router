@@ -1,11 +1,18 @@
 {
-  "presets": [
-    "es2015",
-    "stage-0"
-  ],
-  "plugins": [
-    "transform-decorators-legacy",
-    "transform-runtime",
-    "add-module-exports"
-  ]
+  "plugins": ["transform-runtime"],
+
+  "env": {
+    "commonjs": {
+      "presets": ["es2015-loose", "stage-0"],
+      "plugins": [
+        "transform-decorators-legacy",
+        "add-module-exports"
+      ]
+    },
+
+    "es": {
+      "presets": ["es2015-loose-native-modules", "stage-0"],
+      "plugins": ["transform-decorators-legacy"]
+    }
+  }
 }
