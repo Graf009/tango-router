@@ -5,7 +5,7 @@ import { Iterable } from 'immutable'
 const defaults = {
   failureRedirectPath: '/login',
   predicate: (authData) => Iterable.isIterable(authData) && !authData.isEmpty(),
-  allowRedirectBack: true
+  allowRedirectBack: true,
 }
 
 export default (options) => {
@@ -14,10 +14,10 @@ export default (options) => {
     failureRedirectPath,
     predicate,
     allowRedirectBack,
-    redirectAction
+    redirectAction,
   } = {
     ...defaults,
-    ...options
+    ...options,
   }
 
   const isAuthorized = (authData) => predicate(authData)
@@ -33,7 +33,7 @@ export default (options) => {
     if (!isAuthorized(authData)) {
       redirect({
         pathname: failureRedirectPath,
-        query
+        query,
       })
     }
   }
@@ -43,10 +43,10 @@ export default (options) => {
     static propTypes = {
       location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
-        search: PropTypes.string.isRequired
+        search: PropTypes.string.isRequired,
       }).isRequired,
       authData: PropTypes.object,
-      children: PropTypes.node
+      children: PropTypes.node,
     }
 
     componentWillMount() {
@@ -75,6 +75,6 @@ export default (options) => {
 
   return {
     component: AuthComponent,
-    onEnter
+    onEnter,
   }
 }

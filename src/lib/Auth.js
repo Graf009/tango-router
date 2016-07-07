@@ -7,7 +7,7 @@ import createAuthComponent from './createAuthComponent'
 export default class Auth extends Component {
   static propTypes = {
     options: PropTypes.object.isRequired,
-    store: PropTypes.object.isRequired
+    store: PropTypes.object.isRequired,
   }
 
   static createRouteFromReactElement(element) {
@@ -18,7 +18,7 @@ export default class Auth extends Component {
     return {
       ...route,
       component,
-      onEnter: onEnter(store)
+      onEnter: onEnter(store),
     }
   }
 
