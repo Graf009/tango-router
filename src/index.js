@@ -39,9 +39,6 @@ const createPlugin = (history) => {
     reducers: {
       [moduleName]: routeReducer,
     },
-    actions: {
-      [moduleName]: routeActions,
-    },
     middleware,
     hook: (store) => {
       middleware.listenForReplays(store, getRouterState)
@@ -53,5 +50,8 @@ const createPlugin = (history) => {
 export default {
   ...builtins,
   ...history,
+  actions: {
+    [moduleName]: routeActions,
+  },
   createPlugin,
 }
