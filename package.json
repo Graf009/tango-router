@@ -1,6 +1,6 @@
 {
   "name": "@eagle/tango-router",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Dead simple router for @eagle/tango",
   "repository": {
     "type": "git",
