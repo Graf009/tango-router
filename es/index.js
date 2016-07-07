@@ -1,4 +1,7 @@
 import _extends from 'babel-runtime/helpers/extends';
+
+var _actions;
+
 import { routeActions, syncHistory, routeReducer } from 'react-router-redux';
 import { browserHistory, createMemoryHistory, Router, Route, Link, Redirect, IndexRoute, IndexLink, IndexRedirect } from 'react-router';
 
@@ -26,13 +29,12 @@ var getRouterState = function getRouterState(state) {
   return state.get(moduleName).location;
 };
 var createPlugin = function createPlugin(history) {
-  var _reducers, _actions;
+  var _reducers;
 
   var middleware = syncHistory(history);
 
   return {
     reducers: (_reducers = {}, _reducers[moduleName] = routeReducer, _reducers),
-    actions: (_actions = {}, _actions[moduleName] = routeActions, _actions),
     middleware: middleware,
     hook: function hook(store) {
       middleware.listenForReplays(store, getRouterState);
@@ -42,5 +44,6 @@ var createPlugin = function createPlugin(history) {
 };
 
 export default _extends({}, builtins, history, {
+  actions: (_actions = {}, _actions[moduleName] = routeActions, _actions),
   createPlugin: createPlugin
 });
