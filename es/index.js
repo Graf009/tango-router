@@ -3,7 +3,7 @@ import _extends from 'babel-runtime/helpers/extends';
 var _actions;
 
 import { routeActions, syncHistory, routeReducer } from 'react-router-redux';
-import { browserHistory, createMemoryHistory, Router, Route, Link, Redirect, IndexRoute, IndexLink, IndexRedirect } from 'react-router';
+import { browserHistory, createMemoryHistory, Router, Route, Link, Redirect, IndexRoute, IndexLink, IndexRedirect, match, RouterContext } from 'react-router';
 
 import Auth from './lib/Auth';
 
@@ -17,6 +17,8 @@ var builtins = {
   IndexRoute: IndexRoute,
   IndexLink: IndexLink,
   IndexRedirect: IndexRedirect,
+  match: match,
+  RouterContext: RouterContext,
   Auth: Auth
 };
 

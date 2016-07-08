@@ -28,6 +28,8 @@ var builtins = {
   IndexRoute: _reactRouter.IndexRoute,
   IndexLink: _reactRouter.IndexLink,
   IndexRedirect: _reactRouter.IndexRedirect,
+  match: _reactRouter.match,
+  RouterContext: _reactRouter.RouterContext,
   Auth: _Auth2.default
 };
 
