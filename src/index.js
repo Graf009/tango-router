@@ -9,6 +9,8 @@ import {
   IndexRoute,
   IndexLink,
   IndexRedirect,
+  match,
+  RouterContext,
 } from 'react-router'
 
 import Auth from './lib/Auth'
@@ -23,6 +25,8 @@ const builtins = {
   IndexRoute,
   IndexLink,
   IndexRedirect,
+  match,
+  RouterContext,
   Auth,
 }
 
