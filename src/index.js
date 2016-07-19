@@ -11,6 +11,7 @@ import {
   IndexRedirect,
   match,
   RouterContext,
+  withRouter,
 } from 'react-router'
 
 import Auth from './lib/Auth'
@@ -28,6 +29,7 @@ const builtins = {
   match,
   RouterContext,
   Auth,
+  withRouter,
 }
 
 const history = {
