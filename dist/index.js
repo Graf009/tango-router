@@ -30,7 +30,8 @@ var builtins = {
   IndexRedirect: _reactRouter.IndexRedirect,
   match: _reactRouter.match,
   RouterContext: _reactRouter.RouterContext,
-  Auth: _Auth2.default
+  Auth: _Auth2.default,
+  withRouter: _reactRouter.withRouter
 };
 
 var history = {
