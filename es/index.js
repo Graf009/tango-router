@@ -2,14 +2,15 @@ import _extends from 'babel-runtime/helpers/extends';
 
 var _actions;
 
-import { routeActions, syncHistory, routeReducer } from 'react-router-redux';
 import { browserHistory, createMemoryHistory, Router, Route, Link, Redirect, IndexRoute, IndexLink, IndexRedirect, match, RouterContext, withRouter } from 'react-router';
+import { routeActions, syncHistory, routeReducer } from 'react-router-redux';
 
 import Auth from './lib/Auth';
+import ScrollRouter from './lib/ScrollRouter';
 
 var moduleName = 'router';
 
-var builtins = {
+var builtinsRouter = {
   Router: Router,
   Route: Route,
   Link: Link,
@@ -19,11 +20,15 @@ var builtins = {
   IndexRedirect: IndexRedirect,
   match: match,
   RouterContext: RouterContext,
-  Auth: Auth,
   withRouter: withRouter
 };
 
-var history = {
+var builtinsCustom = {
+  ScrollRouter: ScrollRouter,
+  Auth: Auth
+};
+
+var builtinsHistory = {
   browserHistory: browserHistory,
   createMemoryHistory: createMemoryHistory
 };
@@ -46,7 +51,7 @@ var createPlugin = function createPlugin(history) {
   };
 };
 
-export default _extends({}, builtins, history, {
+export default _extends({}, builtinsRouter, builtinsCustom, builtinsHistory, {
   actions: (_actions = {}, _actions[moduleName] = routeActions, _actions),
   createPlugin: createPlugin
 });

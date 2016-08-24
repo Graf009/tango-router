@@ -101,4 +101,4 @@ export default (function (options) {
     component: AuthComponent,
     onEnter: onEnter
   };
-})
+});
