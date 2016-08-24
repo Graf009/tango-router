@@ -3,7 +3,10 @@
 
   "env": {
     "commonjs": {
-      "presets": ["es2015-loose", "stage-0"],
+      "presets": [
+        ["es2015", { "loose": true, "modules": "commonjs" }],
+        "stage-0"
+      ],
       "plugins": [
         "transform-decorators-legacy",
         "add-module-exports"
@@ -11,7 +14,10 @@
     },
 
     "es": {
-      "presets": ["es2015-loose-native-modules", "stage-0"],
+      "presets": [
+        ["es2015", { "loose": true, "modules": false }],
+        "stage-0"
+      ],
       "plugins": ["transform-decorators-legacy"]
     }
   }
