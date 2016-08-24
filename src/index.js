@@ -1,4 +1,3 @@
-import { routeActions, syncHistory, routeReducer } from 'react-router-redux'
 import {
   browserHistory,
   createMemoryHistory,
@@ -13,12 +12,14 @@ import {
   RouterContext,
   withRouter,
 } from 'react-router'
+import { routeActions, syncHistory, routeReducer } from 'react-router-redux'
 
 import Auth from './lib/Auth'
+import ScrollRouter from './lib/ScrollRouter'
 
 const moduleName = 'router'
 
-const builtins = {
+const builtinsRouter = {
   Router,
   Route,
   Link,
@@ -28,11 +29,15 @@ const builtins = {
   IndexRedirect,
   match,
   RouterContext,
-  Auth,
   withRouter,
 }
 
-const history = {
+const builtinsCustom = {
+  ScrollRouter,
+  Auth,
+}
+
+const builtinsHistory = {
   browserHistory,
   createMemoryHistory,
 }
@@ -54,8 +59,9 @@ const createPlugin = (history) => {
 }
 
 export default {
-  ...builtins,
-  ...history,
+  ...builtinsRouter,
+  ...builtinsCustom,
+  ...builtinsHistory,
   actions: {
     [moduleName]: routeActions,
   },
