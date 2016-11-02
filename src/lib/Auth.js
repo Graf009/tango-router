@@ -6,7 +6,9 @@ import createAuthComponent from './createAuthComponent'
 
 export default class Auth extends Component {
   static propTypes = {
+    // eslint-disable-next-line react/forbid-prop-types
     options: PropTypes.object.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
     store: PropTypes.object.isRequired,
   }
 

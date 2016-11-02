@@ -42,7 +42,7 @@ const builtinsHistory = {
   createMemoryHistory,
 }
 
-const getRouterState = (state) => state.get(moduleName).location
+const getRouterState = state => state.get(moduleName).location
 const createPlugin = (history) => {
   const middleware = syncHistory(history)
 

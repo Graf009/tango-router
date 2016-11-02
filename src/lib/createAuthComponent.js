@@ -4,7 +4,7 @@ import { Iterable } from 'immutable'
 
 const defaults = {
   failureRedirectPath: '/login',
-  predicate: (authData) => Iterable.isIterable(authData) && !authData.isEmpty(),
+  predicate: authData => Iterable.isIterable(authData) && !authData.isEmpty(),
   allowRedirectBack: true,
 }
 
@@ -20,7 +20,7 @@ export default (options) => {
     ...options,
   }
 
-  const isAuthorized = (authData) => predicate(authData)
+  const isAuthorized = authData => predicate(authData)
 
   const ensureAuth = ({ location, authData }, redirect) => {
     let query
@@ -38,13 +38,11 @@ export default (options) => {
     }
   }
 
-  @connect({ authData: authSelector })
   class AuthComponent extends Component {
     static propTypes = {
-      location: PropTypes.shape({
-        pathname: PropTypes.string.isRequired,
-        search: PropTypes.string.isRequired,
-      }).isRequired,
+      // eslint-disable-next-line react/forbid-prop-types, react/no-unused-prop-types
+      location: PropTypes.object.isRequired,
+      // eslint-disable-next-line react/forbid-prop-types
       authData: PropTypes.object,
       children: PropTypes.node,
     }
@@ -68,13 +66,13 @@ export default (options) => {
     }
   }
 
-  const onEnter = (store) => (nextState, replace) => {
+  const onEnter = store => (nextState, replace) => {
     const authData = authSelector(store.getState())
     ensureAuth({ location: nextState.location, authData }, replace)
   }
 
   return {
-    component: AuthComponent,
+    component: connect({ authData: authSelector })(AuthComponent),
     onEnter,
   }
 }
