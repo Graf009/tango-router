@@ -1,24 +1,16 @@
 {
-  "plugins": ["transform-runtime"],
-
   "env": {
     "commonjs": {
       "presets": [
-        ["es2015", { "loose": true, "modules": "commonjs" }],
-        "stage-0"
+        ["@eagle/babel-preset-eagle", {"loose": true}]
       ],
-      "plugins": [
-        "transform-decorators-legacy",
-        "add-module-exports"
-      ]
+      "plugins": ["add-module-exports"]
     },
 
     "es": {
       "presets": [
-        ["es2015", { "loose": true, "modules": false }],
-        "stage-0"
-      ],
-      "plugins": ["transform-decorators-legacy"]
+        ["@eagle/babel-preset-eagle", {"loose": true, "modules": false}]
+      ]
     }
   }
 }
