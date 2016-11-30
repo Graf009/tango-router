@@ -19,10 +19,14 @@ export default (options) => {
     ...defaults,
     ...options,
   }
+    
+  if (!redirectAction) {
+    throw new Error('Missed `redirectAction` property in options')
+  }
 
   const isAuthorized = authData => predicate(authData)
 
-  const ensureAuth = ({ location, authData }, redirect) => {
+  const ensureAuth = ({ location, authData }, replace) => {
     let query
     if (allowRedirectBack) {
       query = { redirect: `${location.pathname}${location.search}` }
@@ -31,6 +35,7 @@ export default (options) => {
     }
 
     if (!isAuthorized(authData)) {
+      const redirect = redirectAction || replace
       redirect({
         pathname: failureRedirectPath,
         query,
@@ -48,11 +53,11 @@ export default (options) => {
     }
 
     componentWillMount() {
-      ensureAuth(this.props, redirectAction)
+      ensureAuth(this.props)
     }
 
     componentWillReceiveProps(nextProps) {
-      ensureAuth(nextProps, redirectAction)
+      ensureAuth(nextProps)
     }
 
     render() {
