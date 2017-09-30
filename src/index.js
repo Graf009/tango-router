@@ -13,6 +13,7 @@ import {
   withRouter,
 } from 'react-router'
 import { routeActions, syncHistory, routeReducer } from 'react-router-redux'
+console.log('test')
 
 import Auth from './lib/Auth'
 import ScrollRouter from './lib/ScrollRouter'
