@@ -16,6 +16,7 @@ import { routeActions, syncHistory, routeReducer } from 'react-router-redux'
 
 import Auth from './lib/Auth'
 import ScrollRouter from './lib/ScrollRouter'
+console.log()
 
 const moduleName = 'router'
 
